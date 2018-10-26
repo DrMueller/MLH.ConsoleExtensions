@@ -1,5 +1,6 @@
-﻿using Mmu.Mlh.ConsoleExtensions.Areas.Initialization;
+﻿using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services;
 using Mmu.Mlh.ServiceProvisioning.Areas.Initialization.Models;
+using Mmu.Mlh.ServiceProvisioning.Areas.Initialization.Services;
 
 namespace Mmu.Mlh.ConsoleExtensions.TestConsole
 {
@@ -8,7 +9,10 @@ namespace Mmu.Mlh.ConsoleExtensions.TestConsole
         public static void Main()
         {
             var containerConfig = ContainerConfiguration.CreateFromAssembly(typeof(Program).Assembly, logInitialization: true);
-            ConsoleBootstrapService.Start(containerConfig);
+            var container = ContainerInitializationService.CreateInitializedContainer(containerConfig);
+
+            var commandsContainer = container.GetInstance<IConsoleCommandsContainer>();
+            commandsContainer.ShowCommands();
         }
     }
 }
