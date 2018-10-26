@@ -19,11 +19,9 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Implementation
             _consoleCommands = consoleCommands.OrderBy(c => c.Key).ToList();
         }
 
-        public void ShowCommands()
+        public async Task ShowCommands()
         {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            ListenForInputs();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            await ListenForInputs();
         }
 
         private void DisplayCommands()
