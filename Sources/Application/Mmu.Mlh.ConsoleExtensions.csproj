@@ -7,7 +7,7 @@
     <Authors>DrMueller</Authors>
     <Company>DrMueller</Company>
     <Product>MyLittleHelpers.ConsoleExtensions</Product>
-    <Description>DrMueller little Console Extensions</Description>
+    <Description>DrMuellers little Console Extensions</Description>
     <PackageIconUrl>https://raw.githubusercontent.com/DrMueller/MLAZH.LanguageService/master/Sources/Application/Common/Infrastructure/Assets/M.png</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <AssemblyVersion Condition="'$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</AssemblyVersion>
