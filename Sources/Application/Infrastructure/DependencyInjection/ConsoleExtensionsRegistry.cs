@@ -1,5 +1,7 @@
 ﻿using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services;
 using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Implementation;
+using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants;
+using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementation;
 using Mmu.Mlh.ConsoleExtensions.Areas.ConsoleOutput.Services;
 using Mmu.Mlh.ConsoleExtensions.Areas.ConsoleOutput.Services.Implementation;
 using Mmu.Mlh.ConsoleExtensions.Areas.ExceptionHandling.Services;
@@ -25,6 +27,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Infrastructure.DependencyInjection
             For<IConsoleActionHandler>().Use<ConsoleActionHandler>().Singleton();
             For<IConsoleWriter>().Use<ConsoleWriter>().Singleton();
             For<IExceptionHandler>().Use<ExceptionHandler>().Singleton();
+            For<IConsoleCommandsStartupService>().Use<ConsoleCommandsStartupService>();
         }
     }
 }

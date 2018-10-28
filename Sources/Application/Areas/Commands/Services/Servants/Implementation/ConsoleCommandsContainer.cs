@@ -6,7 +6,7 @@ using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Models;
 using Mmu.Mlh.ConsoleExtensions.Areas.ExecutionContext.Services;
 using Mmu.Mlh.LanguageExtensions.Areas.Collections;
 
-namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Implementation
+namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementation
 {
     internal class ConsoleCommandsContainer : IConsoleCommandsContainer
     {
