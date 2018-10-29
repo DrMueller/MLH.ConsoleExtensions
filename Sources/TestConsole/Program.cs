@@ -10,7 +10,6 @@ namespace Mmu.Mlh.ConsoleExtensions.TestConsole
         {
             var containerConfig = ContainerConfiguration.CreateFromAssembly(typeof(Program).Assembly, logInitialization: true);
             var container = ContainerInitializationService.CreateInitializedContainer(containerConfig);
-
             container
                 .GetInstance<IConsoleCommandsStartupService>()
                 .Start();
