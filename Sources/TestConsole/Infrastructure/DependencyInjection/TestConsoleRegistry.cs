@@ -12,6 +12,7 @@ namespace Mmu.Mlh.ConsoleExtensions.TestConsole.Infrastructure.DependencyInjecti
                 {
                     scanner.AssemblyContainingType<TestConsoleRegistry>();
                     scanner.AddAllTypesOf<IConsoleCommand>();
+
                     scanner.WithDefaultConventions();
                 });
         }
