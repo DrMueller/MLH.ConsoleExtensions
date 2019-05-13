@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Mmu.Mlh.ConsoleExtensions.Areas.ExecutionContext.Services
 {
-    internal interface IConsoleActionHandler
+    public interface IConsoleActionHandler
     {
         void HandleAction(Action callback);
 
