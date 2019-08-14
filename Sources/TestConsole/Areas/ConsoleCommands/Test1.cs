@@ -12,9 +12,7 @@ namespace Mmu.Mlh.ConsoleExtensions.TestConsole.Areas.ConsoleCommands
 
         public Task ExecuteAsync()
         {
-            Console.WriteLine("Executing Test1");
             Thread.Sleep(2000);
-            Console.WriteLine("Execued Test1");
             return Task.CompletedTask;
         }
     }

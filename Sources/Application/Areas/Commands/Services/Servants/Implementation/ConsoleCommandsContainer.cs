@@ -10,9 +10,6 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementat
 {
     internal class ConsoleCommandsContainer : IConsoleCommandsContainer
     {
-        private readonly IConsoleActionHandler _consoleActionHandler;
-        private readonly IReadOnlyCollection<IConsoleCommand> _consoleCommands;
-
         public ConsoleCommandsContainer(IEnumerable<IConsoleCommand> consoleCommands, IConsoleActionHandler consoleActionHandler)
         {
             _consoleActionHandler = consoleActionHandler;
@@ -24,8 +21,12 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementat
             await ListenForInputs();
         }
 
+        private readonly IConsoleActionHandler _consoleActionHandler;
+        private readonly IReadOnlyCollection<IConsoleCommand> _consoleCommands;
+
         private void DisplayCommands()
         {
+            Console.WriteLine("---------------------------------------------------------");
             _consoleCommands.ForEach(command => Console.WriteLine($"{command.Key} - {command.Description}"));
         }
 
@@ -46,8 +47,11 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementat
                         await ListenForInputs();
                     }
 
-                    Console.WriteLine($"Executing {keyInfo.Key}..");
+                    Console.WriteLine($"{DateTime.Now.ToLongTimeString()}: Executing {keyInfo.Key}..");
                     await command.ExecuteAsync();
+                    Console.WriteLine($"{DateTime.Now.ToLongTimeString()}: Execution of {keyInfo.Key} finished.");
+                    Console.WriteLine();
+                    Console.WriteLine();
                 });
 
             await ListenForInputs();
