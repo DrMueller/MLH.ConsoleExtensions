@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Mmu.Mlh.ConsoleExtensions.Areas.ExceptionHandling.Services;
 
@@ -13,6 +14,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.ExecutionContext.Services.Implementati
             _exceptionHandler = exceptionHandler;
         }
 
+        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Wanted here")]
         public void HandleAction(Action callback)
         {
             try
@@ -25,6 +27,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.ExecutionContext.Services.Implementati
             }
         }
 
+        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Wanted here")]
         public async Task HandleAsyncAction(Func<Task> callback)
         {
             try
