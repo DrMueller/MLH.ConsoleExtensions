@@ -1,16 +1,16 @@
-﻿using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Models;
-using StructureMap;
+﻿using Lamar;
+using Mmu.Mlh.ConsoleExtensions.Areas.Commands.Models;
 
 namespace Mmu.Mlh.ConsoleExtensions.TestConsole.Infrastructure.DependencyInjection
 {
-    public class TestConsoleRegistry : Registry
+    public class TestConsoleRegistryCollection : ServiceRegistry
     {
-        public TestConsoleRegistry()
+        public TestConsoleRegistryCollection()
         {
             Scan(
                 scanner =>
                 {
-                    scanner.AssemblyContainingType<TestConsoleRegistry>();
+                    scanner.AssemblyContainingType<TestConsoleRegistryCollection>();
                     scanner.AddAllTypesOf<IConsoleCommand>();
 
                     scanner.WithDefaultConventions();
