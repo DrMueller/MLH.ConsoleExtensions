@@ -30,6 +30,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementat
             _consoleCommands.ForEach(command => Console.WriteLine($"{command.Key} - {command.Description}"));
         }
 
+        // ReSharper disable once FunctionRecursiveOnAllPaths
         private async Task ListenForInputs()
         {
             await _consoleActionHandler.HandleAsyncAction(
@@ -48,7 +49,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Areas.Commands.Services.Servants.Implementat
                     }
 
                     Console.WriteLine($"{DateTime.Now.ToLongTimeString()}: Executing {keyInfo.Key}..");
-                    await command.ExecuteAsync();
+                    await command!.ExecuteAsync();
                     Console.WriteLine($"{DateTime.Now.ToLongTimeString()}: Execution of {keyInfo.Key} finished.");
                     Console.WriteLine();
                     Console.WriteLine();
