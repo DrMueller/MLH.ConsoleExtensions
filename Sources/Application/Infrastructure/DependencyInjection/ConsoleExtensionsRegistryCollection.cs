@@ -27,7 +27,7 @@ namespace Mmu.Mlh.ConsoleExtensions.Infrastructure.DependencyInjection
             For<IConsoleActionHandler>().Use<ConsoleActionHandler>().Singleton();
             For<IConsoleWriter>().Use<ConsoleWriter>().Singleton();
             For<IExceptionHandler>().Use<ExceptionHandler>().Singleton();
-            For<IConsoleCommandsStartupService>().Use<ConsoleCommandsStartupService>();
+            For<IConsoleCommandsStartupService>().Use<ConsoleCommandsStartupService>().Singleton();
         }
     }
 }
